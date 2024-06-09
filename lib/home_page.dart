@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: const Text("Home Page"),
       ),
       body: Center(
         child: Column(
@@ -44,6 +44,14 @@ class _HomePageState extends State<HomePage> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text("You device id is '${snap.data}'" ?? "hhi"),
+                  );
+                }),
+            FutureBuilder<dynamic>(
+                future: platform.invokeMethod("getApplicationID"),
+                builder: (contexts, snap) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text("You Application id is '${snap.data}'" ?? "hhi"),
                   );
                 }),
             const Text(
