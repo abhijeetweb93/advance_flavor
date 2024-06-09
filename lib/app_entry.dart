@@ -1,7 +1,8 @@
-import 'package:advance_flavor/home_page.dart';
-import 'package:flutter/material.dart';
 
-void main() {
+import 'package:flutter/material.dart';
+import 'home_page.dart';
+
+startApp() async{
   runApp(const MyApp());
 }
 

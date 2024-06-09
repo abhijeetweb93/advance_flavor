@@ -57,24 +57,46 @@ android {
         release {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
+            minifyEnabled = true
+            signingConfig signingConfigs.debug
+        }
+        debug {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --debug` works.
+            minifyEnabled = false
             signingConfig signingConfigs.debug
         }
     }
 
 
 
-    flavorDimensions "app"
+    flavorDimensions "environment", "country"
 
     productFlavors{
         dev{
-            dimension "app"
+            dimension "environment"
             resValue "string", "app_name", "Dev App"
             applicationId "com.advanceflavor.dev"
         }
         prod{
-            dimension "app"
+            dimension "environment"
             resValue "string", "app_name", "Prod App"
             applicationId "com.advanceflavor.prod"
+        }
+        india{
+            applicationIdSuffix ".in"
+            dimension "country"
+            manifestPlaceholders += [countryCode:"in"]
+        }
+        nepal{
+            applicationIdSuffix ".np"
+            dimension "country"
+            manifestPlaceholders += [countryCode:"np"]
+        }
+        bhutan{
+            applicationId "com.advanceflavor.bt"
+            dimension "country"
+            manifestPlaceholders += [countryCode:"bt"]
         }
     }
 }
