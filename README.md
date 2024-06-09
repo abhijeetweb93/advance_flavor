@@ -22,10 +22,15 @@ samples, guidance on mobile development, and a full API reference.
 ## run command
 
 flutter run -t lib/flavor_configs/india/main_india_dev.dart --flavor devIndia 
+
 flutter run -t lib/flavor_configs/india/main_india_prod.dart --flavor prodIndia 
 
+
 flutter run -t lib/flavor_configs/india/main_nepal_dev.dart --flavor devNepal
+
 flutter run -t lib/flavor_configs/india/main_nepal_prod.dart --flavor prodNepal
 
+
 flutter run -t lib/flavor_configs/india/main_bhutan_dev.dart --flavor devBhutan
+
 flutter run -t lib/flavor_configs/india/main_bhutan_prod.dart --flavor prodBhutan
